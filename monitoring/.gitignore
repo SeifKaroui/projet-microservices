@@ -1,0 +1,21 @@
+# Docker volumes
+prometheus-data/
+grafana-data/
+
+# Docker compose logs
+*.log
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# IDE files
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# Temporary files
+*.tmp
+*.bak
+

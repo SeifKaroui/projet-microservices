@@ -1,0 +1,68 @@
+server:
+  port: 8040
+spring:
+  data:
+    mongodb:
+      username: alibou
+      password: alibou
+      host: localhost
+      port: 27017
+      database: notification
+      authentication-database: admin
+  kafka:
+    consumer:
+      bootstrap-servers: localhost:9092
+      group-id: paymentGroup,orderGroup
+      auto-offset-reset: earliest
+      key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+      value-deserializer: org.springframework.kafka.support.serializer.JsonDeserializer
+      properties:
+        spring.json.trusted.packages: '*'
+        spring.json.type.mapping: orderConfirmation:org.projet.ecommerce.notification.kafka.order.OrderConfirmation,paymentConfirmation:org.projet.ecommerce.notification.kafka.payment.PaymentConfirmation
+  mail:
+    host: localhost
+    port: 1025
+    username: alibou
+    password: alibou
+    properties:
+      mail:
+        smtp:
+          trust: "*"
+        auth: true
+        starttls:
+          enabled: true
+        connectiontimeout: 5000
+        timeout: 3000
+        writetimeout: 5000
+
+resilience4j:
+  retry:
+    instances:
+      myRetry:
+        max-attempts: 3
+        wait-duration: 500ms
+  rate-limiter:
+    instances:
+      myRateLimiter:
+        limit-for-period: 5
+        limit-refresh-period: 1s
+        timeout-duration: 500ms
+  circuitbreaker:
+    instances:
+      notificationmicroService:
+        sliding-window-size: 10
+        failure-rate-threshold: 50
+        wait-duration-in-open-state: 10000ms
+        permitted-number-of-calls-in-half-open-state: 3
+        automatic-transition-from-open-to-half-open-enabled: true
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+  metrics:
+    export:
+      prometheus:
+        enabled: true
+
