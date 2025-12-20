@@ -24,19 +24,37 @@ import org.springframework.web.bind.annotation.RestController;
 public class CustomerController {
 
   private final CustomerService service;
+  private final org.axonframework.commandhandling.gateway.CommandGateway commandGateway;
+  private final org.axonframework.queryhandling.QueryGateway queryGateway;
 
   @PostMapping
   public ResponseEntity<String> createCustomer(
       @RequestBody @Valid CustomerRequest request
   ) {
-    return ResponseEntity.ok(this.service.createCustomer(request));
+    // return ResponseEntity.ok(this.service.createCustomer(request));
+    String id = java.util.UUID.randomUUID().toString();
+    commandGateway.sendAndWait(org.projet.ecommerce.customer.customer.cqrs.commands.CreateCustomerCommand.builder()
+            .id(id)
+            .firstname(request.firstname())
+            .lastname(request.lastname())
+            .email(request.email())
+            .address(request.address())
+            .build());
+    return ResponseEntity.ok(id);
   }
 
   @PutMapping
   public ResponseEntity<Void> updateCustomer(
       @RequestBody @Valid CustomerRequest request
   ) {
-    this.service.updateCustomer(request);
+    // this.service.updateCustomer(request);
+    commandGateway.sendAndWait(org.projet.ecommerce.customer.customer.cqrs.commands.UpdateCustomerCommand.builder()
+            .id(request.id())
+            .firstname(request.firstname())
+            .lastname(request.lastname())
+            .email(request.email())
+            .address(request.address())
+            .build());
     return ResponseEntity.accepted().build();
   }
 
@@ -45,7 +63,11 @@ public class CustomerController {
   @RateLimiter(name = "myRateLimiter", fallbackMethod = "fallback")
   @CircuitBreaker(name = "customermicroService", fallbackMethod = "fallback")
   public ResponseEntity<List<CustomerResponse>> findAll() {
-    return ResponseEntity.ok(this.service.findAllCustomers());
+    // return ResponseEntity.ok(this.service.findAllCustomers());
+    return ResponseEntity.ok(queryGateway.query(
+            new org.projet.ecommerce.customer.customer.cqrs.projections.GetAllCustomersQuery(),
+            org.axonframework.messaging.responsetypes.ResponseTypes.multipleInstancesOf(CustomerResponse.class)
+    ).join());
   }
 
   @GetMapping("/exists/{customer-id}")
@@ -59,7 +81,11 @@ public class CustomerController {
   public ResponseEntity<CustomerResponse> findById(
       @PathVariable("customer-id") String customerId
   ) {
-    return ResponseEntity.ok(this.service.findById(customerId));
+    // return ResponseEntity.ok(this.service.findById(customerId));
+    return ResponseEntity.ok(queryGateway.query(
+            new org.projet.ecommerce.customer.customer.cqrs.projections.GetCustomerByIdQuery(customerId),
+            org.axonframework.messaging.responsetypes.ResponseTypes.instanceOf(CustomerResponse.class)
+    ).join());
   }
 
   @DeleteMapping("/{customer-id}")

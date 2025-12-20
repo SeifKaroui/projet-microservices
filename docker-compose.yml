@@ -9,7 +9,7 @@ services:
     volumes:
       - postgres:/data/postgres
     ports:
-      - "5432:5432"
+      - '5432:5432'
     networks:
       - microservices-net
     restart: unless-stopped
@@ -24,7 +24,7 @@ services:
     volumes:
       - pgadmin:/var/lib/pgadmin
     ports:
-      - "5050:80"
+      - '5050:80'
     networks:
       - microservices-net
     restart: unless-stopped
@@ -59,14 +59,14 @@ services:
       ZOOKEEPER_CLIENT_PORT: 2181
       ZOOKEEPER_TICK_TIME: 2000
     ports:
-      - "22181:2181"
+      - '22181:2181'
     networks:
       - microservices-net
   kafka:
     image: confluentinc/cp-kafka:7.5.4
     container_name: ms_kafka
     ports:
-      - "9092:9092"
+      - '9092:9092'
     depends_on:
       - zookeeper
     environment:
@@ -86,6 +86,19 @@ services:
       - 1080:1080
       - 1025:1025
 
+  axonserver:
+    image: axoniq/axonserver:2024.1.0
+    container_name: axonserver
+    ports:
+      - '8024:8024'
+      - '8124:8124'
+    volumes:
+      - axonserver-data:/data
+      - axonserver-events:/eventdata
+      - axonserver-config:/config
+    networks:
+      - microservices-net
+
 networks:
   microservices-net:
     driver: bridge
@@ -94,3 +107,6 @@ volumes:
   postgres:
   pgadmin:
   mongo:
+  axonserver-data:
+  axonserver-events:
+  axonserver-config:

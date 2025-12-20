@@ -15,3 +15,11 @@ management:
   tracing:
     sampling:
       probability: 1.0
+
+axon:
+  axonserver:
+    servers: axonserver:8124
+  serializer:
+    general: jackson
+    events: jackson
+    messages: jackson

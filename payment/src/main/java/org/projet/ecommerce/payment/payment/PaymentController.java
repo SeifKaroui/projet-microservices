@@ -21,12 +21,25 @@ import org.springframework.web.bind.annotation.RestController;
 public class PaymentController {
 
   private final PaymentService service;
+  private final org.axonframework.commandhandling.gateway.CommandGateway commandGateway;
 
   @PostMapping
   public ResponseEntity<Integer> createPayment(
       @RequestBody @Valid PaymentRequest request
   ) {
-    return ResponseEntity.ok(this.service.createPayment(request));
+    // return ResponseEntity.ok(this.service.createPayment(request));
+    Integer id = new java.util.Random().nextInt(1000000);
+    commandGateway.sendAndWait(org.projet.ecommerce.payment.payment.cqrs.commands.CreatePaymentCommand.builder()
+            .id(id)
+            .amount(request.amount())
+            .paymentMethod(request.paymentMethod())
+            .orderId(request.orderId())
+            .orderReference(request.orderReference())
+            .customerFirstname(request.customer().firstname())
+            .customerLastname(request.customer().lastname())
+            .customerEmail(request.customer().email())
+            .build());
+    return ResponseEntity.ok(id);
   }
 
   @GetMapping
