@@ -12,11 +12,7 @@ public class ProductMapper {
                 .description(request.description())
                 .availableQuantity(request.availableQuantity())
                 .price(request.price())
-                .category(
-                        Category.builder()
-                                .id(request.categoryId())
-                                .build()
-                )
+                .categoryId(request.categoryId())
                 .build();
     }
 
@@ -27,9 +23,9 @@ public class ProductMapper {
                 product.getDescription(),
                 product.getAvailableQuantity(),
                 product.getPrice(),
-                product.getCategory().getId(),
-                product.getCategory().getName(),
-                product.getCategory().getDescription()
+                product.getCategoryId(),
+                null,
+                null
         );
     }
 

@@ -21,8 +21,10 @@ public class ProductProjection {
 
     private final ProductRepository repository;
     private final ProductMapper mapper;
+    private final jakarta.persistence.EntityManager entityManager;
 
     @EventHandler
+    @org.springframework.transaction.annotation.Transactional
     public void on(ProductCreatedEvent event) {
         Product product = Product.builder()
                 .id(event.id())
@@ -30,9 +32,9 @@ public class ProductProjection {
                 .description(event.description())
                 .availableQuantity(event.availableQuantity())
                 .price(event.price())
-                .category(Category.builder().id(event.categoryId()).build())
+                .categoryId(event.categoryId())
                 .build();
-        repository.save(product);
+        entityManager.persist(product);
     }
 
     @EventHandler
@@ -44,7 +46,7 @@ public class ProductProjection {
     }
 
     @QueryHandler
-    public List<ProductResponse> handle(GetAllProductsQuery query) {
+    public java.util.List handle(GetAllProductsQuery query) {
         return repository.findAll().stream()
                 .map(mapper::toProductResponse)
                 .collect(Collectors.toList());

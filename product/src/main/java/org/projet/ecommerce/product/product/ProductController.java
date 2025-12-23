@@ -78,9 +78,9 @@ public class ProductController {
     public ResponseEntity<List<ProductResponse>> findAll() {
         // return ResponseEntity.ok(service.findAll());
         // Using CQRS
-        return ResponseEntity.ok(queryGateway.query(
+        return ResponseEntity.ok((List<ProductResponse>) queryGateway.query(
                 new org.projet.ecommerce.product.product.cqrs.projections.GetAllProductsQuery(),
-                org.axonframework.messaging.responsetypes.ResponseTypes.multipleInstancesOf(ProductResponse.class)
+                org.axonframework.messaging.responsetypes.ResponseTypes.instanceOf(List.class)
         ).join());
     }
 

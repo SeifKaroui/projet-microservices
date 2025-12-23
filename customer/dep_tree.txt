@@ -1,0 +1,20 @@
+[INFO] Scanning for projects...
+[INFO] 
+[INFO] -------------------< org.projet.ecommerce:customer >--------------------
+[INFO] Building customer 0.0.1-SNAPSHOT
+[INFO]   from pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- dependency:3.8.1:tree (default-cli) @ customer ---
+[INFO] org.projet.ecommerce:customer:jar:0.0.1-SNAPSHOT
+[INFO] \- org.springframework.cloud:spring-cloud-starter-netflix-eureka-client:jar:4.3.0:compile
+[INFO]    \- com.netflix.eureka:eureka-client:jar:2.0.4:compile
+[INFO]       \- com.netflix.netflix-commons:netflix-eventbus:jar:0.3.0:runtime
+[INFO]          \- com.netflix.netflix-commons:netflix-infix:jar:0.3.0:runtime
+[INFO]             \- com.google.guava:guava:jar:14.0.1:compile
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  3.457 s
+[INFO] Finished at: 2025-12-23T22:35:05+01:00
+[INFO] ------------------------------------------------------------------------

@@ -23,10 +23,7 @@ import java.util.List;
 public class Category {
 
     @Id
-    @GeneratedValue
     private Integer id;
     private String name;
     private String description;
-    @OneToMany(mappedBy = "category", cascade = CascadeType.REMOVE)
-    private List<Product> products;
 }

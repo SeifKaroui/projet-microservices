@@ -1,0 +1,208 @@
+[INFO] Scanning for projects...
+[INFO] 
+[INFO] --------------------< org.projet.ecommerce:payment >--------------------
+[INFO] Building payment 0.0.1-SNAPSHOT
+[INFO]   from pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] >>> spring-boot:3.5.8:run (default-cli) > test-compile @ payment >>>
+[INFO] 
+[INFO] --- resources:3.3.1:resources (default-resources) @ payment ---
+[INFO] Copying 1 resource from src/main/resources to target/classes
+[INFO] Copying 0 resource from src/main/resources to target/classes
+[INFO] 
+[INFO] --- compiler:3.14.1:compile (default-compile) @ payment ---
+[INFO] Nothing to compile - all classes are up to date.
+[INFO] 
+[INFO] --- resources:3.3.1:testResources (default-testResources) @ payment ---
+[INFO] skip non existing resourceDirectory /home/ahmad/Ahmad/Ahmad-Tayh/IGL/SEM5/micro/projet-microservices/payment/src/test/resources
+[INFO] 
+[INFO] --- compiler:3.14.1:testCompile (default-testCompile) @ payment ---
+[INFO] Nothing to compile - all classes are up to date.
+[INFO] 
+[INFO] <<< spring-boot:3.5.8:run (default-cli) < test-compile @ payment <<<
+[INFO] 
+[INFO] 
+[INFO] --- spring-boot:3.5.8:run (default-cli) @ payment ---
+[INFO] Attaching agents: []
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+
+ :: Spring Boot ::                (v3.5.8)
+
+2025-12-23T23:08:58.091+01:00  INFO 237390 --- [payment-service] [           main] o.p.e.payment.PaymentApplication         : Starting PaymentApplication using Java 17.0.17 with PID 237390 (/home/ahmad/Ahmad/Ahmad-Tayh/IGL/SEM5/micro/projet-microservices/payment/target/classes started by ahmad in /home/ahmad/Ahmad/Ahmad-Tayh/IGL/SEM5/micro/projet-microservices/payment)
+2025-12-23T23:08:58.093+01:00  INFO 237390 --- [payment-service] [           main] o.p.e.payment.PaymentApplication         : No active profile set, falling back to 1 default profile: "default"
+2025-12-23T23:08:58.123+01:00  INFO 237390 --- [payment-service] [           main] o.s.c.c.c.ConfigServerConfigDataLoader   : Fetching config from server at : http://localhost:8888
+2025-12-23T23:08:58.123+01:00  INFO 237390 --- [payment-service] [           main] o.s.c.c.c.ConfigServerConfigDataLoader   : Located environment: name=payment-service, profiles=[default], label=null, version=null, state=null
+2025-12-23T23:08:58.206+01:00  WARN 237390 --- [payment-service] [           main] o.s.c.annotation.AnnotationTypeMapping   : Support for convention-based annotation attribute overrides is deprecated and will be removed in Spring Framework 7.0. Please annotate the following attributes in @org.axonframework.spring.stereotype.Aggregate with appropriate @AliasFor declarations: [type]
+2025-12-23T23:08:58.209+01:00  WARN 237390 --- [payment-service] [           main] o.s.c.annotation.AnnotationTypeMapping   : Support for convention-based annotation attribute overrides is deprecated and will be removed in Spring Framework 7.0. Please annotate the following attributes in @org.axonframework.eventsourcing.EventSourcingHandler with appropriate @AliasFor declarations: [payloadType]
+2025-12-23T23:08:58.210+01:00  WARN 237390 --- [payment-service] [           main] o.s.c.annotation.AnnotationTypeMapping   : Support for convention-based annotation attribute overrides is deprecated and will be removed in Spring Framework 7.0. Please annotate the following attributes in @org.axonframework.eventsourcing.EventSourcingHandler with appropriate @AliasFor declarations: [payloadType]
+2025-12-23T23:08:58.212+01:00  WARN 237390 --- [payment-service] [           main] o.s.c.annotation.AnnotationTypeMapping   : Support for convention-based annotation attribute overrides is deprecated and will be removed in Spring Framework 7.0. Please annotate the following attributes in @org.axonframework.eventhandling.EventHandler with appropriate @AliasFor declarations: [payloadType]
+2025-12-23T23:08:58.984+01:00  INFO 237390 --- [payment-service] [           main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-12-23T23:08:59.088+01:00  INFO 237390 --- [payment-service] [           main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 97 ms. Found 1 JPA repository interface.
+2025-12-23T23:08:59.508+01:00  INFO 237390 --- [payment-service] [           main] o.s.cloud.context.scope.GenericScope     : BeanFactory id=31ef71f5-be1a-32c6-88ac-c28a9ba824ec
+2025-12-23T23:09:00.344+01:00  INFO 237390 --- [payment-service] [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8060 (http)
+2025-12-23T23:09:00.353+01:00  INFO 237390 --- [payment-service] [           main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-12-23T23:09:00.353+01:00  INFO 237390 --- [payment-service] [           main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.49]
+2025-12-23T23:09:00.411+01:00  INFO 237390 --- [payment-service] [           main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-12-23T23:09:00.412+01:00  INFO 237390 --- [payment-service] [           main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2287 ms
+2025-12-23T23:09:00.759+01:00  INFO 237390 --- [payment-service] [           main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-12-23T23:09:00.790+01:00  INFO 237390 --- [payment-service] [           main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.6.36.Final
+2025-12-23T23:09:00.810+01:00  INFO 237390 --- [payment-service] [           main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2025-12-23T23:09:00.974+01:00  INFO 237390 --- [payment-service] [           main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-12-23T23:09:00.993+01:00  INFO 237390 --- [payment-service] [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2025-12-23T23:09:01.084+01:00  INFO 237390 --- [payment-service] [           main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@4400026
+2025-12-23T23:09:01.085+01:00  INFO 237390 --- [payment-service] [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2025-12-23T23:09:01.105+01:00  WARN 237390 --- [payment-service] [           main] org.hibernate.orm.deprecation            : HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-12-23T23:09:01.120+01:00  INFO 237390 --- [payment-service] [           main] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 16.11
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-12-23T23:09:02.757+01:00  INFO 237390 --- [payment-service] [           main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-12-23T23:09:02.913+01:00  INFO 237390 --- [payment-service] [           main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-12-23T23:09:03.492+01:00  INFO 237390 --- [payment-service] [           main] o.a.config.AxonIQConsoleModule           : 
+################################################################################################
+## You have not configured AxonIQ Console. AxonIQ Console provides out-of-the box monitoring  ##
+## and management capabilities for your Axon Application, starting with it is free.           ##
+## Visit https://console.axoniq.io for more information!                                      ##
+## Suppress this message by setting system property disable-axoniq-console-message to true.   ##
+################################################################################################
+
+2025-12-23T23:09:03.803+01:00  WARN 237390 --- [payment-service] [           main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-12-23T23:09:05.182+01:00  INFO 237390 --- [payment-service] [           main] DiscoveryClientOptionalArgsConfiguration : Eureka HTTP Client uses RestTemplate.
+2025-12-23T23:09:05.246+01:00  WARN 237390 --- [payment-service] [           main] iguration$LoadBalancerCaffeineWarnLogger : Spring Cloud LoadBalancer is currently working with the default cache. While this cache implementation is useful for development and tests, it's recommended to use Caffeine cache in production.You can switch to using Caffeine cache, by adding it and org.springframework.cache.caffeine.CaffeineCacheManager to the classpath.
+2025-12-23T23:09:05.256+01:00  INFO 237390 --- [payment-service] [           main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 29 endpoints beneath base path '/actuator'
+2025-12-23T23:09:05.364+01:00  INFO 237390 --- [payment-service] [           main] o.a.k.clients.admin.AdminClientConfig    : AdminClientConfig values: 
+	auto.include.jmx.reporter = true
+	bootstrap.controllers = []
+	bootstrap.servers = [localhost:9092]
+	client.dns.lookup = use_all_dns_ips
+	client.id = payment-service-admin-0
+	connections.max.idle.ms = 300000
+	default.api.timeout.ms = 60000
+	enable.metrics.push = true
+	metadata.max.age.ms = 300000
+	metadata.recovery.strategy = none
+	metric.reporters = []
+	metrics.num.samples = 2
+	metrics.recording.level = INFO
+	metrics.sample.window.ms = 30000
+	receive.buffer.bytes = 65536
+	reconnect.backoff.max.ms = 1000
+	reconnect.backoff.ms = 50
+	request.timeout.ms = 30000
+	retries = 2147483647
+	retry.backoff.max.ms = 1000
+	retry.backoff.ms = 100
+	sasl.client.callback.handler.class = null
+	sasl.jaas.config = null
+	sasl.kerberos.kinit.cmd = /usr/bin/kinit
+	sasl.kerberos.min.time.before.relogin = 60000
+	sasl.kerberos.service.name = null
+	sasl.kerberos.ticket.renew.jitter = 0.05
+	sasl.kerberos.ticket.renew.window.factor = 0.8
+	sasl.login.callback.handler.class = null
+	sasl.login.class = null
+	sasl.login.connect.timeout.ms = null
+	sasl.login.read.timeout.ms = null
+	sasl.login.refresh.buffer.seconds = 300
+	sasl.login.refresh.min.period.seconds = 60
+	sasl.login.refresh.window.factor = 0.8
+	sasl.login.refresh.window.jitter = 0.05
+	sasl.login.retry.backoff.max.ms = 10000
+	sasl.login.retry.backoff.ms = 100
+	sasl.mechanism = GSSAPI
+	sasl.oauthbearer.clock.skew.seconds = 30
+	sasl.oauthbearer.expected.audience = null
+	sasl.oauthbearer.expected.issuer = null
+	sasl.oauthbearer.header.urlencode = false
+	sasl.oauthbearer.jwks.endpoint.refresh.ms = 3600000
+	sasl.oauthbearer.jwks.endpoint.retry.backoff.max.ms = 10000
+	sasl.oauthbearer.jwks.endpoint.retry.backoff.ms = 100
+	sasl.oauthbearer.jwks.endpoint.url = null
+	sasl.oauthbearer.scope.claim.name = scope
+	sasl.oauthbearer.sub.claim.name = sub
+	sasl.oauthbearer.token.endpoint.url = null
+	security.protocol = PLAINTEXT
+	security.providers = null
+	send.buffer.bytes = 131072
+	socket.connection.setup.timeout.max.ms = 30000
+	socket.connection.setup.timeout.ms = 10000
+	ssl.cipher.suites = null
+	ssl.enabled.protocols = [TLSv1.2, TLSv1.3]
+	ssl.endpoint.identification.algorithm = https
+	ssl.engine.factory.class = null
+	ssl.key.password = null
+	ssl.keymanager.algorithm = SunX509
+	ssl.keystore.certificate.chain = null
+	ssl.keystore.key = null
+	ssl.keystore.location = null
+	ssl.keystore.password = null
+	ssl.keystore.type = JKS
+	ssl.protocol = TLSv1.3
+	ssl.provider = null
+	ssl.secure.random.implementation = null
+	ssl.trustmanager.algorithm = PKIX
+	ssl.truststore.certificates = null
+	ssl.truststore.location = null
+	ssl.truststore.password = null
+	ssl.truststore.type = JKS
+
+2025-12-23T23:09:05.432+01:00  INFO 237390 --- [payment-service] [           main] o.a.kafka.common.utils.AppInfoParser     : Kafka version: 3.9.1
+2025-12-23T23:09:05.432+01:00  INFO 237390 --- [payment-service] [           main] o.a.kafka.common.utils.AppInfoParser     : Kafka commitId: f745dfdcee2b9851
+2025-12-23T23:09:05.432+01:00  INFO 237390 --- [payment-service] [           main] o.a.kafka.common.utils.AppInfoParser     : Kafka startTimeMs: 1766527745431
+2025-12-23T23:09:05.687+01:00  INFO 237390 --- [payment-service] [service-admin-0] o.a.kafka.common.utils.AppInfoParser     : App info kafka.admin.client for payment-service-admin-0 unregistered
+2025-12-23T23:09:05.691+01:00  INFO 237390 --- [payment-service] [service-admin-0] o.apache.kafka.common.metrics.Metrics    : Metrics scheduler closed
+2025-12-23T23:09:05.691+01:00  INFO 237390 --- [payment-service] [service-admin-0] o.apache.kafka.common.metrics.Metrics    : Closing reporter org.apache.kafka.common.metrics.JmxReporter
+2025-12-23T23:09:05.691+01:00  INFO 237390 --- [payment-service] [service-admin-0] o.apache.kafka.common.metrics.Metrics    : Metrics reporters closed
+2025-12-23T23:09:05.706+01:00  INFO 237390 --- [payment-service] [           main] o.s.c.n.eureka.InstanceInfoFactory       : Setting initial instance status as: STARTING
+2025-12-23T23:09:05.724+01:00  INFO 237390 --- [payment-service] [           main] com.netflix.discovery.DiscoveryClient    : Initializing Eureka in region us-east-1
+2025-12-23T23:09:05.727+01:00  INFO 237390 --- [payment-service] [           main] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2025-12-23T23:09:05.733+01:00  INFO 237390 --- [payment-service] [           main] com.netflix.discovery.DiscoveryClient    : Disable delta property : false
+2025-12-23T23:09:05.733+01:00  INFO 237390 --- [payment-service] [           main] com.netflix.discovery.DiscoveryClient    : Single vip registry refresh property : null
+2025-12-23T23:09:05.733+01:00  INFO 237390 --- [payment-service] [           main] com.netflix.discovery.DiscoveryClient    : Force full registry fetch : false
+2025-12-23T23:09:05.733+01:00  INFO 237390 --- [payment-service] [           main] com.netflix.discovery.DiscoveryClient    : Application is null : false
+2025-12-23T23:09:05.733+01:00  INFO 237390 --- [payment-service] [           main] com.netflix.discovery.DiscoveryClient    : Registered Applications size is zero : true
+2025-12-23T23:09:05.733+01:00  INFO 237390 --- [payment-service] [           main] com.netflix.discovery.DiscoveryClient    : Application version is -1: true
+2025-12-23T23:09:05.733+01:00  INFO 237390 --- [payment-service] [           main] com.netflix.discovery.DiscoveryClient    : Getting all instance registry info from the eureka server
+2025-12-23T23:09:05.935+01:00  INFO 237390 --- [payment-service] [           main] com.netflix.discovery.DiscoveryClient    : The response status is 200
+2025-12-23T23:09:05.937+01:00  INFO 237390 --- [payment-service] [           main] com.netflix.discovery.DiscoveryClient    : Starting heartbeat executor: renew interval is: 30
+2025-12-23T23:09:05.938+01:00  INFO 237390 --- [payment-service] [           main] c.n.discovery.InstanceInfoReplicator     : InstanceInfoReplicator onDemand update allowed rate per min is 4
+2025-12-23T23:09:05.939+01:00  INFO 237390 --- [payment-service] [           main] com.netflix.discovery.DiscoveryClient    : Discovery Client initialized at timestamp 1766527745939 with initial instances count: 3
+2025-12-23T23:09:05.948+01:00  INFO 237390 --- [payment-service] [           main] o.s.c.n.e.s.EurekaServiceRegistry        : Registering application PAYMENT-SERVICE with eureka with status UP
+2025-12-23T23:09:05.949+01:00  INFO 237390 --- [payment-service] [           main] com.netflix.discovery.DiscoveryClient    : Saw local status change event StatusChangeEvent [timestamp=1766527745949, current=UP, previous=STARTING]
+2025-12-23T23:09:05.950+01:00  INFO 237390 --- [payment-service] [foReplicator-%d] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_PAYMENT-SERVICE/192.168.100.11:payment-service:8060: registering service...
+2025-12-23T23:09:05.979+01:00  INFO 237390 --- [payment-service] [foReplicator-%d] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_PAYMENT-SERVICE/192.168.100.11:payment-service:8060 - registration status: 204
+2025-12-23T23:09:06.187+01:00  INFO 237390 --- [payment-service] [           main] i.a.a.c.impl.AxonServerManagedChannel    : Requesting connection details from localhost:8124
+2025-12-23T23:09:06.367+01:00  INFO 237390 --- [payment-service] [           main] i.a.a.c.impl.AxonServerManagedChannel    : Successfully connected to localhost:8124
+2025-12-23T23:09:06.380+01:00  INFO 237390 --- [payment-service] [           main] i.a.a.connector.impl.ControlChannelImpl  : Connected instruction stream for context 'default'. Sending client identification
+2025-12-23T23:09:06.388+01:00  INFO 237390 --- [payment-service] [           main] i.a.a.c.command.impl.CommandChannelImpl  : CommandChannel for context 'default' connected, 0 command handlers registered
+2025-12-23T23:09:06.391+01:00  INFO 237390 --- [payment-service] [           main] i.a.a.c.command.impl.CommandChannelImpl  : Registered handler for command 'org.projet.ecommerce.payment.payment.cqrs.commands.CreatePaymentCommand' in context 'default'
+2025-12-23T23:09:06.517+01:00  INFO 237390 --- [payment-service] [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8060 (http) with context path '/'
+2025-12-23T23:09:06.518+01:00  INFO 237390 --- [payment-service] [           main] .s.c.n.e.s.EurekaAutoServiceRegistration : Updating port to 8060
+2025-12-23T23:09:06.564+01:00  INFO 237390 --- [payment-service] [           main] o.p.e.payment.PaymentApplication         : Started PaymentApplication in 9.256 seconds (process running for 9.847)
+2025-12-23T23:09:06.638+01:00  INFO 237390 --- [payment-service] [.projections]-0] o.a.e.TrackingEventProcessor             : Worker assigned to segment Segment[0/0] for processing
+2025-12-23T23:09:06.647+01:00  INFO 237390 --- [payment-service] [.projections]-0] o.a.e.TrackingEventProcessor             : Using current Thread for last segment worker: TrackingSegmentWorker{processor=org.projet.ecommerce.payment.payment.cqrs.projections, segment=Segment[0/0]}
+2025-12-23T23:09:06.651+01:00  INFO 237390 --- [payment-service] [.projections]-0] o.a.e.TrackingEventProcessor             : Fetched token: null for segment: Segment[0/0]
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD FAILURE
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  03:54 min
+[INFO] Finished at: 2025-12-23T23:12:48+01:00
+[INFO] ------------------------------------------------------------------------
+[ERROR] Failed to execute goal org.springframework.boot:spring-boot-maven-plugin:3.5.8:run (default-cli) on project payment: Process terminated with exit code: 137 -> [Help 1]
+[ERROR] 
+[ERROR] To see the full stack trace of the errors, re-run Maven with the -e switch.
+[ERROR] Re-run Maven using the -X switch to enable full debug logging.
+[ERROR] 
+[ERROR] For more information about the errors and possible solutions, please read the following articles:
+[ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/MojoExecutionException
